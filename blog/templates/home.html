@@ -1,0 +1,483 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block page_body %}
+
+    <div class="container">
+        <!-- /轮播图 start-->
+        <div id="myCarousel" class="carousel slide col-md-8" style="padding: 0!important;">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="{% static 'img/bg3.jpg' %}" alt="First slide">
+                    <div class="carousel-caption">标题 1</div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'img/bg2.jpg' %}" alt="Second slide">
+                    <div class="carousel-caption">标题 2</div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'img/bg3.jpg' %}" alt="Third slide">
+                    <div class="carousel-caption">标题 3</div>
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- /轮播图 end-->
+
+        <!-- /个人简介 start-->
+        <div class="col-md-4">
+            <div class="side-bar-content ml15">
+                <div class="blog-recent-post mb40">
+                    <!-- /title -->
+                    <div class="post-item">
+                        <div class="blog-recent-post-item mb20">
+                            <div>
+                                <img style="width: 20%;position:absolute;margin-top: 90px;margin-left: 100px"
+                                     class="img-circle" src="{% static 'img/girl.jpg' %}">
+                                <img src="{% static 'img/city-profile.jpg' %}" alt="image">
+                            </div>
+                            <!-- /img -->
+                            <div class="blog-recent-post-text">
+                                <div class="blog-recent-post-meta" style="margin-top: 40px">
+                                    <ul class="meta-list text-center">
+                                        <li><a class="text-center" style="color:#fe533d" href="#">尼古拉斯*特仑苏</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <ul class=" text-center mt10">
+                                    <li><a class="text-center" href="#">QQ:</a></li>
+                                    <li><a class="text-center" href="#">990323604</a></li>
+                                </ul>
+                                <ul class=" text-center mt10 ">
+                                    <li><a class="text-center" href="#">github:</a></li>
+                                    <li><a class="text-center"
+                                           href="https://github.com/suxianglun">suxianglun</a></li>
+                                </ul>
+                                <ul class=" text-center  mt10">
+                                    <li><a class="text-center" href="#">Email:</a></li>
+                                    <li><a class="text-center" href="#">suxianglun@163.com</a>
+                                    </li>
+                                </ul>
+                                <ul class=" text-center mt10">
+                                    <li><a class="text-center" href="#">技术栈:</a></li>
+                                    <li><a class="text-center" href="#">Python、Android</a></li>
+                                </ul>
+
+                            </div>
+                            <div class="site-statistic-data">
+                                <ul class="text-center mt10">
+                                    <li>
+                                        <div>
+                                            <a class="text-center" href="#">365</a>
+                                        </div>
+                                        <div>
+                                            <a class="text-center" href="#">博客</a>
+                                        </div>
+                                    </li>
+                                    <li style="margin-left: 10px">
+                                        <div>
+                                            <a class="text-center" href="#">365</a>
+                                        </div>
+                                        <div>
+                                            <a class="text-center" href="#">PV量</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <a class="text-center" href="#">365</a>
+                                        </div>
+                                        <div>
+                                            <a class="text-center" href="#">UV量</a>
+                                        </div>
+                                    </li>
+                                    <li style="margin-left: 10px">
+                                        <div>
+                                            <a class="text-center" href="#">365</a>
+                                        </div>
+                                        <div>
+                                            <a class="text-center" href="#">评论</a>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /个人简介 end-->
+    </div>
+
+    <!-- Start of blog-archive
+        ============================================= -->
+    <section id="blog-archive" class="blog-archive-section pt15 pb40">
+        <div class="container">
+            <div class="row">
+                <div class="blog-archive-content">
+                    <div class="row">
+                        <!-- /左侧博客列表 start-->
+                        <div class="col-sm-8">
+
+                            <div class="left-side-blog ">
+                                <div class="blog-pic-text mb30 " style="padding: 20px">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="blog-img">
+                                                <img src="{% static 'img/carousel1.jpg' %}" alt="image">
+                                            </div>
+                                        </div>
+                                        <!-- /col-md-6 -->
+                                        <div class="col-sm-6">
+                                            <div class="blog-text">
+                                                <ul>
+                                                    <li style="background: #fe533d;padding: 5px">
+                                                        <span class="tag-name " style="color: white">生活</span>
+                                                        <!-- /blog-tag -->
+                                                    </li>
+                                                    <li>
+                                                        <a class="green" href="blog-single.html">改革春风吹满地，中国人民真争气</a>
+                                                        <!-- /blog-tag -->
+                                                    </li>
+                                                </ul>
+
+
+                                                <div class="blog-text-content mt25 ">
+                                                    <p>
+                                                        改革春风吹满地，中国人民真争气，改革春风吹满地，中国人民真争气改革春风吹满地，中国人民真争气，改革春风吹满地，中国人民真争气
+                                                    </p>
+                                                </div>
+                                                <div class="blog-meta mt25 pb20">
+                                                    <ul class="meta-list">
+                                                        <li><a class="green" href="#"><span
+                                                                class="mr5 ti-pencil"></span> 小苏</a></li>
+                                                        <li><a  href="#"><span class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                        <li><a href="#"><span class="mr5 ti-comment-alt"></span>45</a>
+                                                        </li>
+                                                         <li><a class="red" href="#"><span class="mr5 ti-heart"></span>45</a>
+                                                         <li><a href="#"><span class="mr5 ti-layout-media-overlay"></span>45</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                            <!-- /blog-text -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog-pic-text mb30 " style="padding: 20px">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="blog-img">
+                                                <img src="{% static 'img/carousel2.jpg' %}" alt="image">
+                                            </div>
+                                        </div>
+                                        <!-- /col-md-6 -->
+                                        <div class="col-sm-6">
+                                            <div class="blog-text">
+                                                <ul>
+                                                    <li style="background: #fe533d;padding: 5px">
+                                                        <span class="tag-name " style="color: white">生活</span>
+                                                        <!-- /blog-tag -->
+                                                    </li>
+                                                    <li>
+                                                        <a class="green" href="blog-single.html">改革春风吹满地，中国人民真争气</a>
+                                                        <!-- /blog-tag -->
+                                                    </li>
+                                                </ul>
+
+
+                                                <div class="blog-text-content mt25 ">
+                                                    <p>
+                                                        改革春风吹满地，中国人民真争气，改革春风吹满地，中国人民真争气改革春风吹满地，中国人民真争气，改革春风吹满地，中国人民真争气
+                                                    </p>
+                                                </div>
+                                                <div class="blog-meta mt25 pb20">
+                                                    <ul class="meta-list">
+                                                        <li><a class="green" href="#"><span
+                                                                class="mr5 ti-pencil"></span> 小苏</a></li>
+                                                        <li><a  href="#"><span class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                        <li><a href="#"><span class="mr5 ti-comment-alt"></span>45</a>
+                                                        </li>
+                                                         <li><a class="red" href="#"><span class="mr5 ti-heart"></span>45</a>
+                                                         <li><a href="#"><span class="mr5 ti-layout-media-overlay"></span>45</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                            <!-- /blog-text -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog-pic-text mb30 " style="padding: 20px">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="blog-img">
+                                                <img src="{% static 'img/carousel3.jpg' %}" alt="image">
+                                            </div>
+                                        </div>
+                                        <!-- /col-md-6 -->
+                                        <div class="col-sm-6">
+                                            <div class="blog-text">
+                                                <ul>
+                                                    <li style="background: #fe533d;padding: 5px">
+                                                        <span class="tag-name " style="color: white">生活</span>
+                                                        <!-- /blog-tag -->
+                                                    </li>
+                                                    <li>
+                                                        <a class="green" href="blog-single.html">改革春风吹满地，中国人民真争气</a>
+                                                        <!-- /blog-tag -->
+                                                    </li>
+                                                </ul>
+
+
+                                                <div class="blog-text-content mt25 ">
+                                                    <p>
+                                                        改革春风吹满地，中国人民真争气，改革春风吹满地，中国人民真争气改革春风吹满地，中国人民真争气，改革春风吹满地，中国人民真争气
+                                                    </p>
+                                                </div>
+                                                <div class="blog-meta mt25 pb20">
+                                                    <ul class="meta-list">
+                                                        <li><a class="green" href="#"><span
+                                                                class="mr5 ti-pencil"></span> 小苏</a></li>
+                                                        <li><a  href="#"><span class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                        <li><a href="#"><span class="mr5 ti-comment-alt"></span>45</a>
+                                                        </li>
+                                                         <li><a class="red" href="#"><span class="mr5 ti-heart"></span>45</a>
+                                                         <li><a href="#"><span class="mr5 ti-layout-media-overlay"></span>45</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                            <!-- /blog-text -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog-pic-text mb30 " style="padding: 20px">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="blog-img">
+                                                <img src="{% static 'img/carousel4.jpg' %}" alt="image">
+                                            </div>
+                                        </div>
+                                        <!-- /col-md-6 -->
+                                        <div class="col-sm-6">
+                                            <div class="blog-text">
+                                                <ul>
+                                                    <li style="background: #fe533d;padding: 5px">
+                                                        <span class="tag-name " style="color: white">生活</span>
+                                                        <!-- /blog-tag -->
+                                                    </li>
+                                                    <li>
+                                                        <a  href="blog-single.html">改革春风吹满地，中国人民真争气</a>
+                                                        <!-- /blog-tag -->
+                                                    </li>
+                                                </ul>
+
+
+                                                <div class="blog-text-content mt25 ">
+                                                    <p>
+                                                        改革春风吹满地，中国人民真争气，改革春风吹满地，中国人民真争气改革春风吹满地，中国人民真争气，改革春风吹满地，中国人民真争气
+                                                    </p>
+                                                </div>
+                                                <div class="blog-meta mt25 pb20">
+                                                    <ul class="meta-list">
+                                                        <li><a class="green" href="#"><span
+                                                                class="mr5 ti-pencil"></span> 小苏</a></li>
+                                                        <li><a  href="#"><span class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                        <li><a href="#"><span class="mr5 ti-comment-alt"></span>45</a>
+                                                        </li>
+                                                         <li><a class="red" href="#"><span class="mr5 ti-heart"></span>45</a>
+                                                         <li><a href="#"><span class="mr5 ti-layout-media-overlay"></span>45</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                            <!-- /blog-text -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /blog-text-pic -->
+
+                            </div>
+
+                            <!-- /blog-text-pic -->
+                            <div class="blog-pagination text-center">
+                                <ul class="pagination">
+                                    <li><a href="#"><span class="ti-angle-double-left"></span></a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#"><span class="ti-angle-double-right"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /左侧博客列表 end-->
+
+
+                        <!-- /右侧 搜索 归档、标签、热门列表 start-->
+                        <div class="col-sm-4">
+                            <div class="side-bar-content ml15">
+                                <!-- /搜索 start-->
+                                <div class="side-bar-search mb40">
+                                    <form action="#" method="get">
+                                        <input type="text" class="" placeholder="Search here...">
+                                        <button type="submit"><span class="ti-search"></span></button>
+                                    </form>
+                                </div>
+                                <!-- /搜索 end -->
+
+                                <!-- /归档 start -->
+                                <div class="category mb40">
+                                    <div class="side-bar-title mb40">
+                                        <h3 class="red">归档</h3>
+                                    </div>
+                                    <!-- /title -->
+                                    <div class="category-item">
+                                        <ul class="category-item-list">
+                                            <li><a href="#">Python</a><span class="badge pull-right">25</span></li>
+                                            <li><a href="#">Java</a><span class="badge pull-right">25</span></li>
+                                            <li><a href="#">Dart </a><span class="badge pull-right">75</span></li>
+                                            <li><a href="#">Android</a><span class="badge pull-right">14</span></li>
+                                            <li><a href="#">Fluter</a><span class="badge pull-right">26</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /归档 end -->
+
+                                <!-- /最近热门 start -->
+                                <div class="blog-recent-post mb40">
+                                    <div class="side-bar-title mb40">
+                                        <h3 class="red">最近热门</h3>
+                                    </div>
+                                    <!-- /title -->
+                                    <div class="post-item">
+                                        <div class="blog-recent-post-item mb20">
+                                            <div class="blog-recent-post-pic mr25 pull-left">
+                                                <img src="{% static 'img/g-1.png' %}" alt="image">
+                                            </div>
+                                            <!-- /img -->
+                                            <div class="blog-recent-post-text">
+                                                <div class="blog-recent-post-head">
+                                                    <a href="#">改革春风吹满地，中国人民真争气</a>
+                                                </div>
+                                                <!-- /post-head -->
+                                                <div class="blog-recent-post-meta mt5">
+                                                    <ul class="meta-list">
+                                                        <li><a class="black" href="#"><span class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /post-item -->
+
+                                        <div class="blog-recent-post-item mb20">
+                                            <div class="blog-recent-post-pic mr25 pull-left">
+                                                <img src="{% static 'img/g-2.png' %}" alt="image">
+                                            </div>
+                                            <!-- /img -->
+                                            <div class="blog-recent-post-text">
+                                                <div class="blog-recent-post-head">
+                                                    <a href="#">改革春风吹满地，中国人民真争气</a>
+                                                </div>
+                                                <!-- /post-head -->
+                                                <div class="blog-recent-post-meta mt5">
+                                                    <ul class="meta-list">
+                                                        <li><a class="black" href="#"><span class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /post-item -->
+
+                                        <div class="blog-recent-post-item">
+                                            <div class="blog-recent-post-pic mr25 pull-left">
+                                                <img src="{% static 'img/g-1.png' %}" alt="image">
+                                            </div>
+                                            <!-- /img -->
+                                            <div class="blog-recent-post-text">
+                                                <div class="blog-recent-post-head">
+                                                    <a href="#">改革春风吹满地，中国人民真争气</a>
+                                                </div>
+                                                <!-- /post-head -->
+                                                <div class="blog-recent-post-meta mt5">
+                                                    <ul class="meta-list">
+                                                        <li><a class="black" href="#"><span class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /recent-post-item -->
+                                    </div>
+                                </div>
+                                <!-- /最近热门 end -->
+
+                                <!-- /标签云 start-->
+
+                                <div class="instagram-pic">
+                                    <div class="side-bar-title mb40">
+                                        <h3 class="red">标签云</h3>
+                                    </div>
+                                    <!-- /title -->
+
+                                    <div class="instagram-pic-list">
+                                        <ul class="footer-gallery text-center">
+                                            <li><a href="#">Python</a></li>
+                                            <li><a href="#">Android</a></li>
+                                            <li><a href="#">Django</a></li>
+                                            <li><a href="#">Linux</a></li>
+                                            <li><a href="#">Dart</a></li>
+                                            <li><a href="#">Fulter</a></li>
+                                            <li><a href="#">Kotlin</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /标签云 end-->
+                            </div>
+                        </div>
+                        <!-- /右侧归档、标签、热门列表 end-->
+                    </div>
+                    <!-- /row -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of  blog-archive
+    ============================================= -->
+{% endblock %}
+
+</body>
+</html>

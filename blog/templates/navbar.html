@@ -1,0 +1,197 @@
+<!-- 整个菜单栏部分  悬浮在最上层 -->
+{% load static %}
+<header>
+    <div class="header-top-bg">
+			<div class="container">
+				<div class="row">
+					<div class="header-top">
+						<div class="head-top-info pull-left">
+							<ul class="top-info">
+								<li style="color: #fe533d"><img style="height: 10%!important;" src="{% static 'img/logo.png' %}" alt="image">用脚步去丈量梦想的距离</li>
+							</ul>
+						</div>
+						<!-- /head-top-info -->
+						<div class="header-social pull-right">
+							<div class="social">
+								<ul class="social-list">
+									<li><a href="#"><span class="ti-github"></span></a></li>
+									<li><a href="#"><span class="ti-google"></span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /header-social -->
+					</div><!-- /header-top -->
+				</div><!-- /row -->
+			</div><!-- /container -->
+		</div>
+    <div class="menu-bar  mb20">
+    <div class="container">
+        <div class="row">
+
+            <!-- 导航栏 -->
+            <nav class="navbar">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <!-- 适配手机展示的导航栏 -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" style="color: #fe533d" href="{% url 'home' %}">苏湘伦的博客</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <!-- 导航栏菜单部分 -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{% url 'home' %}">首页 </a></li>
+                        <li><a>教程</a>
+                            <ul class="menu-dropdown">
+                                {#                                {% for foo in robot_list %}#}
+                                {#                                    <li><a href="{% url 'product' foo.id %}">{{ foo.name }}</a></li>#}
+                                {#                                {% endfor %}#}
+                                <li><a href="">Python教程</a></li>
+                                <li><a href="">django教程</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a>技术</a>
+                            <ul class="menu-dropdown">
+                                {#                                {% for foo in hardware_list %}#}
+                                {#                                    <li><a href="{% url 'product' foo.id %}">{{ foo.name }}</a></li>#}
+                                {#                                {% endfor %}#}
+                                <li><a href="">Python</a></li>
+                                <li><a href="">Java</a></li>
+                                <li><a href="">Android</a></li>
+                            </ul>
+                        </li>
+                        <li><a>管理</a>
+                            <ul class="menu-dropdown">
+                                {#                                {% for foo in solution_list %}#}
+                                {#                                    <li><a href="{% url 'product' foo.id %}">{{ foo.name }}</a></li>#}
+                                {#                                {% endfor %}#}
+                                <li><a href="">项目管理</a></li>
+                                <li><a href="">产品管理</a></li>
+                            </ul>
+                        </li>
+                        <li><a>生活</a>
+                            <ul class="menu-dropdown">
+                                <li><a href="">感悟</a></li>
+                                <li><a href="">沉思</a></li>
+                            </ul>
+
+                        </li>
+                        <li><a>关于我、博客</a>
+                            <ul class="menu-dropdown">
+                                {#                                {% for foo in news_category_list %}#}
+                                {#                                    <li><a href="{% url 'news_list' foo.id %}">{{ foo.name }}</a></li>#}
+                                {#                                {% endfor %}#}
+                                <li><a href="404.html">关于我、博客</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+{#                    <div id="sb-search" class="sb-search ">#}
+{#                            #}
+{#                        <form action="#" method="post">#}
+{#                               <input class="sb-search-input " onkeyup="buttonUp();"#}
+{#                                      placeholder="输入要搜索的关键字" type="search" value="" name="search"#}
+{#                                      id="search">#}
+{#                             <input class="sb-search-submit" type="submit" value="">#}
+{#                             <span class="sb-icon-search"><i class="ti-search"></i></span>#}
+{#                                #}
+{#                        </form>#}
+{#                    </div>#}
+                </div><!-- /.navbar-collapse -->
+
+
+            </nav>
+
+
+            <div class="wrap">
+                <!--MENU-->
+                <div id="main-menu">
+                    <div class="menu-btn">
+                        <div class="menu-btn-line menu-btn-line-1"></div>
+                        <div class="menu-btn-line menu-btn-line-2"></div>
+                        <div class="menu-btn-line menu-btn-line-3"></div>
+                    </div>
+
+                    <nav class="navbar ownavigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                    data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse navbar-right collapse in" aria-expanded="true">
+                            <ul class="nav navbar-nav">
+                                <li><a href="{% url 'home' %}" title="About Us">首页</a></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" title="Pages"
+                                       data-toggle="dropdown"
+                                       role="button" aria-haspopup="true" aria-expanded="false">教程</a>
+                                    <ul class="dropdown-menu ">
+                                        {#                                        <li><a href="{% url 'document' %}">Navi++文档</a></li>#}
+                                        {#                                        <li><a href="{% url 'document' %}">软件下载</a></li>#}
+                                        <li><a class="text-center" href="">Python教程</a></li>
+                                        <li><a class="text-center" href="">django教程</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" title="Pages"
+                                       data-toggle="dropdown"
+                                       role="button" aria-haspopup="true" aria-expanded="false">技术</a>
+                                    <ul class="dropdown-menu">
+                                        {#                                        <li><a href="{% url 'document' %}">Navi++文档</a></li>#}
+                                        {#                                        <li><a href="{% url 'document' %}">软件下载</a></li>#}
+                                        <li><a class="text-center" href="">Python</a></li>
+                                        <li><a class="text-center" href="">Java</a></li>
+                                        <li><a class="text-center" href="">Android</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" title="Pages"
+                                       data-toggle="dropdown"
+                                       role="button" aria-haspopup="true" aria-expanded="false">管理</a>
+                                    <ul class="dropdown-menu">
+                                        {#                                        <li><a href="{% url 'document' %}">Navi++文档</a></li>#}
+                                        {#                                        <li><a href="{% url 'document' %}">软件下载</a></li>#}
+                                        <li><a class="text-center" href="">项目管理</a></li>
+                                        <li><a class="text-center" href="">产品管理</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" title="Pages"
+                                       data-toggle="dropdown"
+                                       role="button" aria-haspopup="true" aria-expanded="false">生活</a>
+                                    <ul class="dropdown-menu">
+                                        {#                                        <li><a href="{% url 'document' %}">Navi++文档</a></li>#}
+                                        {#                                        <li><a href="{% url 'document' %}">软件下载</a></li>#}
+                                        <li><a class="text-center" href="">感悟</a></li>
+                                        <li><a class="text-center" href="">沉思</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" title="Pages"
+                                       data-toggle="dropdown"
+                                       role="button" aria-haspopup="true" aria-expanded="false">关于我、博客</a>
+                                    <ul class="dropdown-menu">
+                                        {#                                        {% for foo in news_category_list %}#}
+                                        {#                                            <li><a href="{% url 'news_list' foo.id %}">{{ foo.name }}</a></li>#}
+                                        {#                                        {% endfor %}#}
+                                        <li><a class="text-center" href="404.html">关于我、博客</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </nav><!-- Ownavigation /- -->
+
+                </div>
+                <!-- END menu -->
+            </div><!--/wrap  -->
+        </div><!--/row  -->
+    </div><!--/container  -->
+</div><!--/menu-bar  -->
+</header>

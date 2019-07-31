@@ -10,5 +10,5 @@ from django.conf.urls import url, include
 from blog.views import *
 
 urlpatterns = [
-    url(r'', IndexView.as_view(), name='home'),
+    url(r'^$', IndexView.as_view(), name='home'),
 ]

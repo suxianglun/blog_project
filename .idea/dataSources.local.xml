@@ -9,5 +9,14 @@
       <auth-required>false</auth-required>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+<<<<<<< HEAD
+=======
+    <data-source name="db" uuid="5f15dcc1-ead8-4149-bef5-4bddd6c35378">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+    </data-source>
+    <data-source name="blog_project@localhost" uuid="c1ff374a-90bb-4744-97c2-fbe39b0557de">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+    </data-source>
+>>>>>>> 5c0c671
   </component>
 </project>

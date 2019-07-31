@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# blog_project
+personal blog project by django and bootstrap
+=======
 # 个人博客
 
 ## 1.技术栈

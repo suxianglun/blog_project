@@ -273,10 +273,10 @@
                                 <ul>
                                     {% for rows in post_list %}
                                         <li>
-                                            <div class="blog-pic-text mb30 " style="padding: 20px">
+                                            <div class="blog-pic-text mb20 " style="padding: 10px">
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        <div class="blog-img mt15">
+                                                        <div class="blog-img mt10">
                                                             {% if rows.img_url %}
                                                                 <img src="{{ rows.img_url }}" alt="image">
                                                             {% else %}
@@ -286,7 +286,7 @@
                                                         </div>
                                                     </div>
                                                     <!-- /col-md-6 -->
-                                                    <div class="col-sm-8 mt15">
+                                                    <div class="col-sm-8 mt10">
                                                         <div class="blog-text">
                                                             <ul>
                                                                 <li style="background: #fe533d;padding: 5px">
@@ -302,12 +302,12 @@
                                                             </ul>
 
 
-                                                            <div class="blog-text-content mt25 ">
+                                                            <div class="blog-text-content mt10 ">
                                                                 <p>
                                                                     {{ rows.excerpt }}
                                                                 </p>
                                                             </div>
-                                                            <div class="blog-meta mt25 pb20">
+                                                            <div class="blog-meta mt10 pb10">
                                                                 <ul class="meta-list">
                                                                     <li><a class="green" href="#"><span
                                                                             class="mr5 ti-pencil"></span> {{ rows.author }}

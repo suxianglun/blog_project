@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 # blog_project
 personal blog project by django and bootstrap
-=======
 # 个人博客
-
+gi
 ## 1.技术栈
 
 python3.6    

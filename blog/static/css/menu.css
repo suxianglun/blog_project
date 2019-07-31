@@ -34,7 +34,8 @@ Start Of Header [*3]
 	background-color: #fe533d;
 }
 ul.nav.navbar-nav.navbar-right {
-	margin-right: 360px;
+	/*margin-right: 360px;*/
+	margin-right: 290px;
 }
 .navbar {
 	margin-bottom: 0;
@@ -44,7 +45,7 @@ ul.nav.navbar-nav.navbar-right {
 	padding-top: 32px;
 }
 .nav>li>a {
-	padding: 38px 19px;
+	padding: 34px 14px;
 	color: #0e0e0e;
 	position: relative;
 }

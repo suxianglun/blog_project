@@ -32,7 +32,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# 图片、文件、视频上传路径
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Application definition
+# xadmin在导航栏和页尾修改公司名称
+XADMIN_TITLE = '博客后台管理系统'
+XADMIN_FOOTER_TITLE = '尼古拉斯特仑苏'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,6 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'xadmin',  # xadmin
+    'crispy_forms',  # xadmin
+    'stdimage',  # xadmin缩略图
 ]
 
 MIDDLEWARE = [
@@ -105,21 +115,20 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'  # 语言
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'  # 时区
 
-USE_I18N = True
+USE_I18N = True  # 启动语言
 
-USE_L10N = True
+USE_L10N = True  # 数据和时间格式
 
-USE_TZ = True
+USE_TZ = True  # 启用时区
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# django-compressor 和 django-sass-processor 很好的完成了css的编译和压缩工作
-# 压缩功能是根据Debug 来控制的，只有生产环境，即Debug为false 的时候才会压缩。
-# 测试环境中，可通过添加如下参数尝试：
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

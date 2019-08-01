@@ -1496,7 +1496,7 @@ Start of blog-archive page
 }
 
 .side-bar-search input {
-    height: 50px;
+    height: 42px;
     width: 100%;
     padding: 15px;
     border: none;
@@ -1505,12 +1505,12 @@ Start of blog-archive page
 .side-bar-search button {
     position: absolute;
     top: 0px;
-    right: 0px;
+    right: 15px;
     background-color: #f1f1f1;
     border: none;
-    height: 50px;
-    width: 50px;
-    line-height: 50px;
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
 }
 
 .side-bar-title h2,

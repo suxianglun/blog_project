@@ -44,8 +44,235 @@
 
 <body>
 {% include 'navbar.html' %}
-{% block page_body %}
-{% endblock %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 pb20">
+            {% block page_body %}
+            {% endblock %}
+        </div>
+        <div class="col-sm-4">
+            <section id="blog-archive" class="blog-archive-section pb40 ">
+                <div class="blog-archive-content">
+                    <div class="row">
+                        <!-- /右侧 搜索 归档、标签、热门列表 start-->
+                        <div>
+                            <div class="side-bar-content ml15">
+                                <!-- /个人简介 start-->
+                                <div class="side-bar-content">
+                                    <div class="blog-recent-post mb40">
+                                        <!-- /title -->
+                                        <div class="post-item" style="padding: 0px 10px!important;">
+                                            <div class="blog-recent-post-item mb20">
+                                                <div>
+                                                    <img style="width: 20%;position:absolute;margin-top: 90px;margin-left: 100px"
+                                                         class="img-circle" src="{% static 'img/girl.jpg' %}">
+                                                    <img src="{% static 'img/city-profile.jpg' %}" alt="image">
+                                                </div>
+                                                <!-- /img -->
+                                                <div class="blog-recent-post-text">
+                                                    <div class="blog-recent-post-meta" style="margin-top: 40px">
+                                                        <ul class="meta-list text-center">
+                                                            <li><a class="text-center" style="color:#fe533d"
+                                                                   href="#">尼古拉斯*特仑苏</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <ul class=" text-center mt10">
+                                                        <li><a class="text-center" href="#">QQ:</a></li>
+                                                        <li><a class="text-center" href="#">990323604</a></li>
+                                                    </ul>
+                                                    <ul class=" text-center mt10 ">
+                                                        <li><a class="text-center" href="#">github:</a></li>
+                                                        <li><a class="text-center"
+                                                               href="https://github.com/suxianglun">suxianglun</a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class=" text-center  mt10">
+                                                        <li><a class="text-center" href="#">Email:</a></li>
+                                                        <li><a class="text-center" href="#">suxianglun@163.com</a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                                <div class="site-statistic-data">
+                                                    <ul class="text-center mt15">
+                                                        <li>
+                                                            <div>
+                                                                <a class="text-center" href="#">365</a>
+                                                            </div>
+                                                            <div>
+                                                                <a class="text-center" href="#">博客</a>
+                                                            </div>
+                                                        </li>
+                                                        <li style="margin-left: 10px">
+                                                            <div>
+                                                                <a class="text-center" href="#">365</a>
+                                                            </div>
+                                                            <div>
+                                                                <a class="text-center" href="#">PV量</a>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <a class="text-center" href="#">365</a>
+                                                            </div>
+                                                            <div>
+                                                                <a class="text-center" href="#">UV量</a>
+                                                            </div>
+                                                        </li>
+                                                        <li style="margin-left: 10px">
+                                                            <div>
+                                                                <a class="text-center" href="#">365</a>
+                                                            </div>
+                                                            <div>
+                                                                <a class="text-center" href="#">评论</a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /个人简介 end-->
+                                <!-- /搜索 start-->
+                                <div class="side-bar-search mb40">
+                                    <form action="#" method="get">
+                                        <input type="text" class="" placeholder="Search here...">
+                                        <button type="submit"><span class="ti-search"></span></button>
+                                    </form>
+                                </div>
+                                <!-- /搜索 end -->
+
+                                <!-- /归档 start -->
+                                <div class="category mb40">
+                                    <div class="side-bar-title mb40">
+                                        <h4 class="red">归档</h4>
+                                    </div>
+                                    <!-- /title -->
+                                    <div class="category-item">
+                                        <ul class="category-item-list">
+                                            <li><a href="#">Python</a><span class="pull-right">25</span></li>
+                                            <li><a href="#">Java</a><span class="pull-right">25</span></li>
+                                            <li><a href="#">Dart </a><span class="pull-right">75</span></li>
+                                            <li><a href="#">Android</a><span class="pull-right">14</span></li>
+                                            <li><a href="#">Fluter</a><span class=" pull-right">26</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /归档 end -->
+
+                                <!-- /最近热门 start -->
+                                <div class="blog-recent-post mb40">
+                                    <div class="side-bar-title mb40">
+                                        <h4 class="red">最近热门</h4>
+                                    </div>
+                                    <!-- /title -->
+                                    <div class="post-item">
+                                        <div class="blog-recent-post-item mb20">
+                                            <div class="blog-recent-post-pic mr25 pull-left">
+                                                <img src="{% static 'img/g-1.png' %}" alt="image">
+                                            </div>
+                                            <!-- /img -->
+                                            <div class="blog-recent-post-text">
+                                                <div class="blog-recent-post-head">
+                                                    <a href="#">改革春风吹满地，中国人民真争气</a>
+                                                </div>
+                                                <!-- /post-head -->
+                                                <div class="blog-recent-post-meta mt5">
+                                                    <ul class="meta-list">
+                                                        <li><a class="black" href="#"><span
+                                                                class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /post-item -->
+
+                                        <div class="blog-recent-post-item mb20">
+                                            <div class="blog-recent-post-pic mr25 pull-left">
+                                                <img src="{% static 'img/g-2.png' %}" alt="image">
+                                            </div>
+                                            <!-- /img -->
+                                            <div class="blog-recent-post-text">
+                                                <div class="blog-recent-post-head">
+                                                    <a href="#">改革春风吹满地，中国人民真争气</a>
+                                                </div>
+                                                <!-- /post-head -->
+                                                <div class="blog-recent-post-meta mt5">
+                                                    <ul class="meta-list">
+                                                        <li><a class="black" href="#"><span
+                                                                class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /post-item -->
+
+                                        <div class="blog-recent-post-item">
+                                            <div class="blog-recent-post-pic mr25 pull-left">
+                                                <img src="{% static 'img/g-1.png' %}" alt="image">
+                                            </div>
+                                            <!-- /img -->
+                                            <div class="blog-recent-post-text">
+                                                <div class="blog-recent-post-head">
+                                                    <a href="#">改革春风吹满地，中国人民真争气</a>
+                                                </div>
+                                                <!-- /post-head -->
+                                                <div class="blog-recent-post-meta mt5">
+                                                    <ul class="meta-list">
+                                                        <li><a class="black" href="#"><span
+                                                                class="mr5 ti-timer"></span>
+                                                            26 Apr, 2017</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /recent-post-item -->
+                                    </div>
+                                </div>
+                                <!-- /最近热门 end -->
+
+                                <!-- /标签云 start-->
+
+                                <div class="instagram-pic">
+                                    <div class="side-bar-title mb40">
+                                        <h4 class="red">标签云</h4>
+                                    </div>
+                                    <!-- /title -->
+
+                                    <div class="instagram-pic-list">
+                                        <ul class="footer-gallery text-center">
+                                            <li><a href="#">Python</a></li>
+                                            <li><a href="#">Android</a></li>
+                                            <li><a href="#">Django</a></li>
+                                            <li><a href="#">Linux</a></li>
+                                            <li><a href="#">Dart</a></li>
+                                            <li><a href="#">Fulter</a></li>
+                                            <li><a href="#">Kotlin</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /标签云 end-->
+                            </div>
+                        </div>
+                        <!-- /右侧归档、标签、热门列表 end-->
+                    </div>
+                    <!-- /row -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
 <!-- Start of footer section
 	============================================= -->
 <footer id="footer-section" class="footer-style">
@@ -55,8 +282,9 @@
                 <div class="row">
                     <div class="footer-menu-content">
                         <div class="copy-right pull-left">
-                            <p> 苏湘伦 版权所有 © 2019丨托管于 腾讯云主机 丨京ICP备18048642号-1  <a
-                                   style="color: white" href="http://www.suxianglun.com/" target="_blank" title="模板之家"><span class="red">苏湘伦博客</span></a> 丨采用
+                            <p> 苏湘伦 版权所有 © 2019丨托管于 腾讯云主机 丨京ICP备18048642号-1 <a
+                                    style="color: white" href="http://www.suxianglun.com/" target="_blank" title="模板之家"><span
+                                    class="red">苏湘伦博客</span></a> 丨采用
                                 <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
                         </div>
                         <div class="footer-menu-list pull-right mt25">
@@ -101,7 +329,6 @@ The following part can be removed on Server for On Demand Loading) -->
 <script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
 <script type="text/javascript">new WOW().init();</script>
 <script type="text/javascript" src="{% static 'js/circle-progress.js' %}"></script>
-
 
 
 <script type="text/javascript" src="{% static 'rev-slider/js/revolution.extension.actions.min.js' %}"></script>

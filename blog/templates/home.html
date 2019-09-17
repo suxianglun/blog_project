@@ -1,12 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 {% block page_body %}
     <div class="container">
         <div class="row">
@@ -55,10 +48,10 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="blog-img mt10">
-                                                {% if rows.img_url %}
-                                                    <img src="{{ rows.img_url }}" alt="image">
-                                                {% else %}
+                                                {% if rows.url %}
                                                     <img src="{{ rows.url }}" alt="image">
+                                                {% else %}
+                                                    <img src="{{ rows.img_url }}" alt="image">
                                                 {% endif %}
 
                                             </div>
@@ -73,8 +66,8 @@
                                                         <!-- /blog-tag -->
                                                     </li>
                                                     <li>
-                                                        <a class="green"
-                                                           href="blog-single.html">{{ rows.title }}</a>
+                                                        <a class="green" href="{% url 'blog:post_detail' pk=rows.id %}">{{ rows.title }}</a>
+{#                                                        <a class="green" href="{{ rows.get_absolute_url }}">{{ rows.title }}</a>#}
                                                         <!-- /blog-tag -->
                                                     </li>
                                                 </ul>
@@ -125,12 +118,6 @@
                 <!-- /左侧博客列表 end-->
             </div>
 
-            <!-- Start of blog-archive
-            ============================================= -->
-            <!-- End of  blog-archive
-            ============================================= -->
-
-
         </div>
 
 
@@ -141,5 +128,3 @@
 
 {% endblock %}
 
-</body>
-</html>

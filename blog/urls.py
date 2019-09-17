@@ -6,9 +6,9 @@
 # @Version :
 from django.conf.urls import url, include
 
-
-from blog.views import *
-
+from blog import views
+app_name = 'blog'
 urlpatterns = [
-    url(r'^$', IndexView.as_view(), name='home'),
+    url(r'^$', views.IndexView.as_view(), name='home'),
+    url(r'^post/(?P<pk>[0-9]+)/$', views.PostDetailView.as_view(), name='post_detail'),
 ]

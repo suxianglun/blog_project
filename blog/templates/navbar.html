@@ -33,14 +33,14 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <!-- 适配手机展示的导航栏 -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" style="color: #fe533d" href="{% url 'home' %}">苏湘伦的博客</a>
+                    <a class="navbar-brand" style="color: #fe533d" href="{% url 'blog:home' %}">博客</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <!-- 导航栏菜单部分 -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{% url 'home' %}">首页 </a></li>
+                        <li><a href="{% url 'blog:home' %}">首页 </a></li>
                         <li><a>教程</a>
                             <ul class="menu-dropdown">
                                 {#                                {% for foo in robot_list %}#}
@@ -124,7 +124,7 @@
                         </div>
                         <div id="navbar" class="navbar-collapse collapse navbar-right collapse in" aria-expanded="true">
                             <ul class="nav navbar-nav">
-                                <li><a href="{% url 'home' %}" title="About Us">首页</a></li>
+                                <li><a href="{% url 'blog:home' %}" title="About Us">首页</a></li>
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" title="Pages"
                                        data-toggle="dropdown"

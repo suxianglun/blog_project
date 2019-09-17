@@ -11,6 +11,7 @@ from stdimage.models import StdImageField
 from stdimage.utils import UploadToUUID
 
 import markdown
+import mistune
 
 
 # Create your models here.
@@ -47,8 +48,10 @@ class Tag(models.Model):
 class Post(models.Model):
     # 文章标题
     title = models.CharField(max_length=100)
-    # 文章内容
+    # 文章Markdown内容
     body = models.TextField(verbose_name='MarkDown文章')
+    body_html = models.TextField(verbose_name='正文Html代码', blank=True, editable=False)
+
     # 创建时间
     create_time = models.DateField()
     # 最后一次修改时间
@@ -56,8 +59,8 @@ class Post(models.Model):
 
     # 配图
     image = StdImageField(verbose_name='图片', blank=True,
-                        upload_to=UploadToUUID(path='images'),  # 上传路径并使用uuid重新命名 MEDIA_ROOT/images/#UUID#.#EXT#
-                        variations={'thumbnail': {"width": 200, "height": 200, "crop": True}})  # 缩略图
+                          upload_to=UploadToUUID(path='images'),  # 上传路径并使用uuid重新命名 MEDIA_ROOT/images/#UUID#.#EXT#
+                          variations={'thumbnail': {"width": 200, "height": 200, "crop": True}})  # 缩略图
 
     # 文章摘要，可以没有文章摘要，但默认情况下 CharField 要求我们必须存入数据，否则就会报错。
     # 指定 CharField 的 blank=True 参数值后就可以允许空值了。
@@ -99,20 +102,22 @@ class Post(models.Model):
             return '上传图片'
 
     image_img.short_description = '显示图片'  # 显示在页面的内容
-    image_img.allow_tags =True  # True 显示图片 False显示html代码
+    image_img.allow_tags = True  # True 显示图片 False显示html代码
 
     def save(self, *args, **kwargs):
+        self.body_html = mistune.markdown(self.body)
         # 若没有摘要
         if not self.excerpt:
             # 首先实例化一个 Markdown 类，用于渲染 body 的文本
-            md = markdown.Markdown(extensions=[
-                'markdown.extensions.extra',
-                'markdown.extensions.codehilite',
-            ])
-            # 先将 Markdown 文本渲染成 HTML 文本
-            # strip_tags 去掉 HTML 文本的全部 HTML 标签
-            # 从文本摘取前 54 个字符赋给 excerpt
-            self.excerpt = strip_tags(md.convert(self.body))[:54] + '......'
+            # md = markdown.Markdown(extensions=[
+            #     'markdown.extensions.extra',
+            #     'markdown.extensions.codehilite',
+            # ])
+            #
+            # # 先将 Markdown 文本渲染成 HTML 文本
+            # # strip_tags 去掉 HTML 文本的全部 HTML 标签
+            # # 从文本摘取前 54 个字符赋给 excerpt
+            self.excerpt = strip_tags(self.body_html)[:54] + '......'
         super(Post, self).save(*args, **kwargs)
 
     def increate_views(self):
@@ -134,4 +139,4 @@ class Post(models.Model):
         verbose_name_plural = verbose_name = '文章'
 
     def get_absolute_url(self):
-        return reverse('blog:detail', kwargs={'pk': self.pk})
+        return reverse('blog:post_detail', kwargs={'pk': self.pk})

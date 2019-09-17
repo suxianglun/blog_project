@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'xadmin',  # xadmin
     'crispy_forms',  # xadmin
+    'reversion',
     'stdimage',  # xadmin缩略图
     'debug_toolbar',  # 调试工具
 ]

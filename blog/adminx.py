@@ -2,6 +2,9 @@ from django.contrib import admin
 from blog.models import Post, Category, Tag
 import xadmin
 from xadmin import views
+from xadmin.layout import Row, Fieldset, Container
+
+from blog.forms.news import PostAdminForm
 
 
 # Register your models here.
@@ -48,9 +51,27 @@ class TagAdmin(object):
     list_display = ['name']
 
 
+# class PostAdmin(object):
+#     list_display = ['title', 'excerpt', 'category', 'views', 'modified_time', 'image_img',
+#                     'img_url']
+
+
 class PostAdmin(object):
-    list_display = ['title', 'excerpt', 'category', 'views', 'modified_time', 'image_img',
-                    'img_url']
+    form = PostAdminForm
+    list_display = ['title', 'category', 'author', 'create_time', 'image_img', 'url']
+    form_layout = (
+        Fieldset(
+            '基础信息',
+            Row("title", "category"),
+        ),
+        Fieldset(
+            '内容信息',
+            'is_md',
+            'content_ck',
+            'content_md',
+            'content',
+        )
+    )
 
 
 xadmin.site.register(Category, CategoryAdmin)

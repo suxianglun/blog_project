@@ -35,7 +35,8 @@ ALLOWED_HOSTS = []
 # 图片、文件、视频上传路径
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+ # 发布新闻图片路径
+CKEDITOR_UPLOAD_PATH = 'post_images'
 # Application definition
 # xadmin在导航栏和页尾修改公司名称
 XADMIN_TITLE = '博客后台管理系统'
@@ -52,6 +53,8 @@ INSTALLED_APPS = [
     'xadmin',  # xadmin
     'crispy_forms',  # xadmin
     'stdimage',  # xadmin缩略图
+    'ckeditor',  # 富文本编辑器
+    'ckeditor_uploader',  # 富文本编辑器图片上传
 ]
 
 MIDDLEWARE = [
@@ -65,7 +68,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'blog_project.urls'
-
+# 富文本编辑配置
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 600,
+        'width': 800,
+        'tabSpaces': 4,
+        'extraPlugins': 'codesnippet',  # 配置代码插件
+    }
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

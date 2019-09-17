@@ -122,6 +122,7 @@
                                         <div class="comment-form">
                                             <form id="contact_form" action="#" method="POST"
                                                   enctype="multipart/form-data">
+                                                {% csrf_token %}
                                                 <div class="leave-commen-info">
                                                     <input class="name" name="name" type="text"
                                                            placeholder="Your Name..">

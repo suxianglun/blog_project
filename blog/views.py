@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.views import View
 from django.views.generic import DetailView
 from django.utils.text import slugify
@@ -6,6 +6,8 @@ from django.utils.text import slugify
 
 from blog.models import Post, Category, Tag
 from blog.utils.pager import PageInfo
+from django.views.decorators.csrf import csrf_exempt
+
 import mistune
 import markdown
 from markdown.extensions.toc import TocExtension
@@ -41,7 +43,7 @@ class PostDetailView(DetailView):
         post = super(PostDetailView, self).get_object(queryset=None)
 
         # convert 方法将 post.body 中的 Markdown 文本渲染成 HTML 文本
-        post.body_html = mistune.markdown(post.body)
+        post.body_html = mistune.markdown(post.content)
         return post
 
     # def get_context_data(self, **kwargs):
@@ -57,3 +59,12 @@ class PostDetailView(DetailView):
 
     def post(self, request):
         return
+
+@csrf_exempt
+def page_not_found(request):
+    return render_to_response('404.html')
+
+
+@csrf_exempt
+def page_error(request):
+    return render_to_response('500.html')

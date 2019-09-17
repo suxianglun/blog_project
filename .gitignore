@@ -109,6 +109,7 @@ blog_project_env/
 ENV/
 env.bak/
 venv.bak/
+blog_project/media
 
 # Spyder project settings
 .spyderproject

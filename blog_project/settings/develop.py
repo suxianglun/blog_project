@@ -29,7 +29,9 @@ INSTALLED_APPS = [
     'xadmin',  # xadmin
     'crispy_forms',  # xadmin
     'reversion',
-    'stdimage',  # xadmin缩略图
+    'stdimage',  # xadmin缩略图,
+    'ckeditor',  # 富文本编辑器
+    'ckeditor_uploader',  # 富文本编辑器图片上传
     'debug_toolbar',  # 调试工具
 ]
 MIDDLEWARE += [

@@ -13,6 +13,8 @@ from stdimage.utils import UploadToUUID
 import markdown
 import mistune
 
+import pdb
+
 
 # Create your models here.
 
@@ -48,9 +50,10 @@ class Tag(models.Model):
 class Post(models.Model):
     # 文章标题
     title = models.CharField(max_length=100)
-    # 文章Markdown内容
-    body = models.TextField(verbose_name='MarkDown文章')
-    body_html = models.TextField(verbose_name='正文Html代码', blank=True, editable=False)
+    # 根据喜好选择admin编辑器：富文本和Markdown
+    is_md = models.BooleanField(verbose_name='markdown语法', default=False)
+    content = models.TextField(verbose_name='内容')
+    content_html = models.TextField(verbose_name='正文Html代码', blank=True, editable=False)
 
     # 创建时间
     create_time = models.DateField()
@@ -64,7 +67,7 @@ class Post(models.Model):
 
     # 文章摘要，可以没有文章摘要，但默认情况下 CharField 要求我们必须存入数据，否则就会报错。
     # 指定 CharField 的 blank=True 参数值后就可以允许空值了。
-    excerpt = models.CharField(max_length=200, blank=True)
+    excerpt = models.CharField(max_length=200, blank=False)
 
     # https://docs.djangoproject.com/en/1.10/topics/db/models/#relationships
     # 分类 根据需求 一对多关系：一篇文章对应一个分类，一个分类有多个文章
@@ -78,6 +81,8 @@ class Post(models.Model):
     views = models.PositiveIntegerField(default=0)
     # 图片已经上传情况下，直接使用img_url
     img_url = models.URLField(verbose_name='图片外部url', blank=True)
+
+
 
     def url(self):
         """
@@ -96,7 +101,6 @@ class Post(models.Model):
             src = self.image.thumbnail.url  # 页面显示的缩略图
             # 插入html代码
             image_html = '<a href="%s" target="_blank" title="图片下载地址"><img alt="" src="%s"/>' % (href, src)
-            print(f'imge_html======{image_html}')
             return image_html
         else:
             return '上传图片'
@@ -105,20 +109,18 @@ class Post(models.Model):
     image_img.allow_tags = True  # True 显示图片 False显示html代码
 
     def save(self, *args, **kwargs):
-        self.body_html = mistune.markdown(self.body)
-        # 若没有摘要
-        if not self.excerpt:
-            # 首先实例化一个 Markdown 类，用于渲染 body 的文本
-            # md = markdown.Markdown(extensions=[
-            #     'markdown.extensions.extra',
-            #     'markdown.extensions.codehilite',
-            # ])
-            #
-            # # 先将 Markdown 文本渲染成 HTML 文本
-            # # strip_tags 去掉 HTML 文本的全部 HTML 标签
-            # # 从文本摘取前 54 个字符赋给 excerpt
-            self.excerpt = strip_tags(self.body_html)[:54] + '......'
-        super(Post, self).save(*args, **kwargs)
+        """
+        将Markdown转为html
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        if self.is_md:
+            self.content_html = mistune.markdown(self.content)
+        else:
+            self.content_html = self.content
+        pdb.set_trace()
+        super().save(*args, **kwargs)
 
     def increate_views(self):
         self.views += 1

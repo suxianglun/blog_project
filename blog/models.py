@@ -16,13 +16,69 @@ import mistune
 import pdb
 
 
-# Create your models here.
+class Course(models.Model):
+    """
+    教程
+    """
+    name = models.CharField(max_length=30)
+    # 配图
+    image = StdImageField(verbose_name='图片', blank=True,
+                          upload_to=UploadToUUID(path='images'),  # 上传路径并使用uuid重新命名 MEDIA_ROOT/images/#UUID#.#EXT#
+                          variations={'thumbnail': {"width": 200, "height": 200, "crop": True}})  # 缩略图
+
+    @python_2_unicode_compatible
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = verbose_name = '教程'
+
+    def url(self):
+        """
+        获取img_url
+        :return:
+        """
+        if self.image:
+            print(self.image.url)
+            return self.image.url
+        else:
+            return "url为空"
+
+    def image_img(self):
+        if self.image:
+            href = self.image.url  # 点击后显示的放大图片
+            src = self.image.thumbnail.url  # 页面显示的缩略图
+            # 插入html代码
+            image_html = '<a href="%s" target="_blank" title="图片下载地址"><img alt="" src="%s"/>' % (href, src)
+            return image_html
+        else:
+            return '上传图片'
+
+    image_img.short_description = '显示图片'  # 显示在页面的内容
+    image_img.allow_tags = True  # True 显示图片 False显示html代码
+
+
+class NavMenu(models.Model):
+    """
+    导航栏菜单
+    """
+    name = models.CharField(max_length=60)
+
+    @python_2_unicode_compatible
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = verbose_name = '导航栏菜单'
+
+
 
 class Category(models.Model):
-    '''
+    """
     分类
-    '''
+    """
     name = models.CharField(max_length=100)
+    nav_menu = models.ForeignKey(NavMenu, blank=True, default='')
 
     @python_2_unicode_compatible
     def __str__(self):
@@ -33,9 +89,9 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
-    '''
+    """
     标签
-    '''
+    """
     name = models.CharField(max_length=100)
 
     @python_2_unicode_compatible
@@ -77,12 +133,13 @@ class Post(models.Model):
     # 作者
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
 
+    # 教程
+    course = models.ForeignKey(Course, blank=True, default='')
+
     # 阅读量 PositiveIntegerField 类型只允许其值大于等于0
     views = models.PositiveIntegerField(default=0)
     # 图片已经上传情况下，直接使用img_url
     img_url = models.URLField(verbose_name='图片外部url', blank=True)
-
-
 
     def url(self):
         """
@@ -119,7 +176,6 @@ class Post(models.Model):
             self.content_html = mistune.markdown(self.content)
         else:
             self.content_html = self.content
-        pdb.set_trace()
         super().save(*args, **kwargs)
 
     def increate_views(self):

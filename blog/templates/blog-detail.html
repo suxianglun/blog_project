@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block page_body %}
-    <section id="blog-details" class="blog-details-section pt40  pb80">
+    <section id="blog-details" class="blog-details-section  pb80">
         <div class="container">
             <div class="row">
                 <div class="blog-details-section-content">
@@ -9,7 +9,7 @@
                         <div class="col-sm-8">
                             <div class="blog-details-section-left-side  pb80">
                                 <div class="blog-details-main-pic">
-                                    <img src="{% static 'blog-detail.jpg' %}" alt="image">
+                                    <img src="{{ post.url }}" alt="image">
                                 </div>
                                 <!-- /img -->
                                 <div class="blog-single-text  pb50">
@@ -53,104 +53,104 @@
                                         </div>
                                         <!-- /blog-tag -->
 
-                                        <div class="share-this pull-right">
-                                            <ul>
-                                                <li>Share This:</li>
-                                                <li><a href="#"><span class="ti-twitter"></span></a></li>
-                                                <li><a href="#"><span class="ti-facebook"></span></a></li>
-                                                <li><a href="#"><span class="ti-google"></span></a></li>
-                                            </ul>
-                                        </div>
+{#                                        <div class="share-this pull-right">#}
+{#                                            <ul>#}
+{#                                                <li>Share This:</li>#}
+{#                                                <li><a href="#"><span class="ti-twitter"></span></a></li>#}
+{#                                                <li><a href="#"><span class="ti-facebook"></span></a></li>#}
+{#                                                <li><a href="#"><span class="ti-google"></span></a></li>#}
+{#                                            </ul>#}
+{#                                        </div>#}
                                     </div>
                                 </div>
                                 <!-- / blog-single-text-->
                             </div>
 
-                            <div class="comment-area">
-                                <div class="reply-comment mb50">
-                                    <div class="side-bar-title mb40">
-                                        <h2>Commnents [12]</h2>
-                                    </div>
-                                    <div class="client-name-reply pb70">
-                                        <div class="reply-pic pull-left mr25">
-                                            <img src="assets/img/reply-1.jpg" alt="image">
-                                        </div>
-                                        <div class="name-reply-text">
-                                            <div class="name-reply pb20">
-                                                <span class="client-name"><a href="#">Tamanna</a></span>
-                                                <span class="designation">2day ago</span>
-                                                <div class="comment-icon pull-right">
-                                                    <a href="#"><span class="ti-comments"></span></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="reply-text">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit :)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /client-name-reply -->
-                                    <div class="reply-text-2">
-                                        <div class="client-name-reply">
-                                            <div class="reply-pic pull-left mr25">
-                                                <img src="assets/img/reply-2.jpg" alt="image">
-                                            </div>
-                                            <div class="name-reply-text">
-                                                <div class="name-reply pb20">
-                                                    <span class="client-name"><a href="#">Saiful Islam</a></span>
-                                                    <span class="designation">2day ago</span>
-                                                    <div class="comment-icon pull-right">
-                                                        <a href="#"><span class="ti-comments"></span></a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="reply-text">
-                                                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                        laboris nisi ut
-                                                        aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /reply-comment -->
-                                <div class="leave-comment">
-                                    <div class="side-bar-title mb40">
-                                        <h2>Leave a Comment</h2>
-                                    </div>
-                                    <div class="leave-comment-form pb50 clearfix">
-                                        <div class="comment-form">
-                                            <form id="contact_form" action="#" method="POST"
-                                                  enctype="multipart/form-data">
-                                                {% csrf_token %}
-                                                <div class="leave-commen-info">
-                                                    <input class="name" name="name" type="text"
-                                                           placeholder="Your Name..">
-                                                </div>
-                                                <div class="leave-commen-info">
-                                                    <input class="email" name="email" type="text"
-                                                           placeholder="Your Website..">
-                                                </div>
-                                                <div class="leave-commen-info">
-                                                    <div class="leave-commen-info">
-                                                        <input class="email" name="email" type="text"
-                                                               placeholder="Phone Number...">
-                                                    </div>
-                                                </div>
-                                                <div class="leave-commen-info mt25">
-                                        <textarea id="message" name="message" placeholder="Message Here.. " rows="7"
-                                                  cols="30"></textarea>
-
-                                                </div>
-                                                <div class="send-button text-uppercase pull-right">
-                                                    <button type="submit" value="Submit">SEND MESSAGE</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /leave-comment -->
-                            </div>
+{#                            <div class="comment-area">#}
+{#                                <div class="reply-comment mb50">#}
+{#                                    <div class="side-bar-title mb40">#}
+{#                                        <h2>Commnents [12]</h2>#}
+{#                                    </div>#}
+{#                                    <div class="client-name-reply pb70">#}
+{#                                        <div class="reply-pic pull-left mr25">#}
+{#                                            <img src="assets/img/reply-1.jpg" alt="image">#}
+{#                                        </div>#}
+{#                                        <div class="name-reply-text">#}
+{#                                            <div class="name-reply pb20">#}
+{#                                                <span class="client-name"><a href="#">Tamanna</a></span>#}
+{#                                                <span class="designation">2day ago</span>#}
+{#                                                <div class="comment-icon pull-right">#}
+{#                                                    <a href="#"><span class="ti-comments"></span></a>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="reply-text">#}
+{#                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit :)</p>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <!-- /client-name-reply -->#}
+{#                                    <div class="reply-text-2">#}
+{#                                        <div class="client-name-reply">#}
+{#                                            <div class="reply-pic pull-left mr25">#}
+{#                                                <img src="assets/img/reply-2.jpg" alt="image">#}
+{#                                            </div>#}
+{#                                            <div class="name-reply-text">#}
+{#                                                <div class="name-reply pb20">#}
+{#                                                    <span class="client-name"><a href="#">Saiful Islam</a></span>#}
+{#                                                    <span class="designation">2day ago</span>#}
+{#                                                    <div class="comment-icon pull-right">#}
+{#                                                        <a href="#"><span class="ti-comments"></span></a>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{##}
+{#                                                <div class="reply-text">#}
+{#                                                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco#}
+{#                                                        laboris nisi ut#}
+{#                                                        aliquip ex ea commodo consequat. Duis aute irure dolor.</p>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <!-- /reply-comment -->#}
+{#                                <div class="leave-comment">#}
+{#                                    <div class="side-bar-title mb40">#}
+{#                                        <h2>Leave a Comment</h2>#}
+{#                                    </div>#}
+{#                                    <div class="leave-comment-form pb50 clearfix">#}
+{#                                        <div class="comment-form">#}
+{#                                            <form id="contact_form" action="#" method="POST"#}
+{#                                                  enctype="multipart/form-data">#}
+{#                                                {% csrf_token %}#}
+{#                                                <div class="leave-commen-info">#}
+{#                                                    <input class="name" name="name" type="text"#}
+{#                                                           placeholder="Your Name..">#}
+{#                                                </div>#}
+{#                                                <div class="leave-commen-info">#}
+{#                                                    <input class="email" name="email" type="text"#}
+{#                                                           placeholder="Your Website..">#}
+{#                                                </div>#}
+{#                                                <div class="leave-commen-info">#}
+{#                                                    <div class="leave-commen-info">#}
+{#                                                        <input class="email" name="email" type="text"#}
+{#                                                               placeholder="Phone Number...">#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                                <div class="leave-commen-info mt25">#}
+{#                                        <textarea id="message" name="message" placeholder="Message Here.. " rows="7"#}
+{#                                                  cols="30"></textarea>#}
+{##}
+{#                                                </div>#}
+{#                                                <div class="send-button text-uppercase pull-right">#}
+{#                                                    <button type="submit" value="Submit">SEND MESSAGE</button>#}
+{#                                                </div>#}
+{#                                            </form>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <!-- /leave-comment -->#}
+{#                            </div>#}
                         </div>
                     </div>
                     <!-- /row -->

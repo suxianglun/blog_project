@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 # 图片、文件、视频上传路径
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
- # 发布新闻图片路径
+# 发布新闻图片路径
 CKEDITOR_UPLOAD_PATH = 'post_images'
 # Application definition
 # xadmin在导航栏和页尾修改公司名称
@@ -90,7 +90,12 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            # 使用自定义的filter需要在这里注册
+            'libraries': {
+                'my_customer_tags': 'blog.templatetags.tags',
+            },
         },
+
     },
 ]
 

@@ -1,10 +1,11 @@
 from django.contrib import admin
-from blog.models import Post, Category, Tag
+
 import xadmin
 from xadmin import views
 from xadmin.layout import Row, Fieldset, Container
 
 from blog.forms.news import PostAdminForm
+from blog.models import Post, Category, Tag, Course,NavMenu
 
 
 # Register your models here.
@@ -43,6 +44,10 @@ class GlobalSettings(object):
 xadmin.site.register(views.CommAdminView, GlobalSettings)
 
 
+class NavMenuAdmin(object):
+    list_display = ['name']
+
+
 class CategoryAdmin(object):
     list_display = ['name']
 
@@ -51,9 +56,8 @@ class TagAdmin(object):
     list_display = ['name']
 
 
-# class PostAdmin(object):
-#     list_display = ['title', 'excerpt', 'category', 'views', 'modified_time', 'image_img',
-#                     'img_url']
+class CourseAdmin(object):
+    list_display = ['name', 'image_img', 'url']
 
 
 class PostAdmin(object):
@@ -77,3 +81,5 @@ class PostAdmin(object):
 xadmin.site.register(Category, CategoryAdmin)
 xadmin.site.register(Tag, TagAdmin)
 xadmin.site.register(Post, PostAdmin)
+xadmin.site.register(Course, CourseAdmin)
+xadmin.site.register(NavMenu, NavMenuAdmin)

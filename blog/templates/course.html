@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_body %}
+    <section id="blog-details" class="blog-details-section pt40  pb80">
+        <div class="container">
+            <div class="row">
+                <div class="blog-details-section-content">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            {% for foo in course_list %}
+                                <div class="blog-details-section-left-side col-lg-4 col-md-3 col-sm-6">
+                                    <div class="blog-details-main-pic">
+                                        <img src="{{ foo.url }}" alt="image">
+                                    </div>
+                                    <!-- /img -->
+                                    <div class="blog-head-title text-center">
+                                        <h2 class="black"><a href="{% url 'blog:course' foo.pk %}">{{ foo.name }}</a>
+                                        </h2>
+                                    </div>
+
+                                    <!-- / blog-single-text-->
+                                </div>
+
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <!-- /row -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

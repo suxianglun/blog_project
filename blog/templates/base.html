@@ -23,7 +23,7 @@
     <!-- owl-carousel -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
     <!-- Video-min -->
-{#    <link rel="stylesheet" type="text/css" href="{% static 'css/video.min.css' %}">#}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/video.min.css' %}">#}
     <!-- animate.css -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
     <!-- REVOLUTION STYLE SHEETS -->
@@ -96,43 +96,44 @@
                                                     </ul>
 
                                                 </div>
-                                                <div class="site-statistic-data">
-                                                    <ul class="text-center mt15">
-                                                        <li>
-                                                            <div>
-                                                                <a class="text-center" href="#">365</a>
-                                                            </div>
-                                                            <div>
-                                                                <a class="text-center" href="#">博客</a>
-                                                            </div>
-                                                        </li>
-                                                        <li style="margin-left: 10px">
-                                                            <div>
-                                                                <a class="text-center" href="#">365</a>
-                                                            </div>
-                                                            <div>
-                                                                <a class="text-center" href="#">PV量</a>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div>
-                                                                <a class="text-center" href="#">365</a>
-                                                            </div>
-                                                            <div>
-                                                                <a class="text-center" href="#">UV量</a>
-                                                            </div>
-                                                        </li>
-                                                        <li style="margin-left: 10px">
-                                                            <div>
-                                                                <a class="text-center" href="#">365</a>
-                                                            </div>
-                                                            <div>
-                                                                <a class="text-center" href="#">评论</a>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
+                                                {#                                                文章统计#}
+                                                {#                                                <div class="site-statistic-data">#}
+                                                {#                                                    <ul class="text-center mt15">#}
+                                                {#                                                        <li>#}
+                                                {#                                                            <div>#}
+                                                {#                                                                <a class="text-center" href="#">365</a>#}
+                                                {#                                                            </div>#}
+                                                {#                                                            <div>#}
+                                                {#                                                                <a class="text-center" href="#">博客</a>#}
+                                                {#                                                            </div>#}
+                                                {#                                                        </li>#}
+                                                {#                                                        <li style="margin-left: 10px">#}
+                                                {#                                                            <div>#}
+                                                {#                                                                <a class="text-center" href="#">365</a>#}
+                                                {#                                                            </div>#}
+                                                {#                                                            <div>#}
+                                                {#                                                                <a class="text-center" href="#">PV量</a>#}
+                                                {#                                                            </div>#}
+                                                {#                                                        </li>#}
+                                                {#                                                        <li>#}
+                                                {#                                                            <div>#}
+                                                {#                                                                <a class="text-center" href="#">365</a>#}
+                                                {#                                                            </div>#}
+                                                {#                                                            <div>#}
+                                                {#                                                                <a class="text-center" href="#">UV量</a>#}
+                                                {#                                                            </div>#}
+                                                {#                                                        </li>#}
+                                                {#                                                        <li style="margin-left: 10px">#}
+                                                {#                                                            <div>#}
+                                                {#                                                                <a class="text-center" href="#">365</a>#}
+                                                {#                                                            </div>#}
+                                                {#                                                            <div>#}
+                                                {#                                                                <a class="text-center" href="#">评论</a>#}
+                                                {#                                                            </div>#}
+                                                {#                                                        </li>#}
+                                                {#                                                    </ul>#}
+                                                {##}
+                                                {#                                                </div>#}
                                             </div>
 
                                         </div>
@@ -156,89 +157,13 @@
                                     <!-- /title -->
                                     <div class="category-item">
                                         <ul class="category-item-list">
-                                            <li><a href="#">Python</a><span class="pull-right">25</span></li>
-                                            <li><a href="#">Java</a><span class="pull-right">25</span></li>
-                                            <li><a href="#">Dart </a><span class="pull-right">75</span></li>
-                                            <li><a href="#">Android</a><span class="pull-right">14</span></li>
-                                            <li><a href="#">Fluter</a><span class=" pull-right">26</span></li>
+                                            {% for foo in category_list %}
+                                                <li><a href="{% url 'blog:category' foo.id %}">{{ foo.name }}</a></li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
                                 <!-- /归档 end -->
-
-                                <!-- /最近热门 start -->
-                                <div class="blog-recent-post mb40">
-                                    <div class="side-bar-title mb40">
-                                        <h4 class="red">最近热门</h4>
-                                    </div>
-                                    <!-- /title -->
-                                    <div class="post-item">
-                                        <div class="blog-recent-post-item mb20">
-                                            <div class="blog-recent-post-pic mr25 pull-left">
-                                                <img src="{% static 'img/g-1.png' %}" alt="image">
-                                            </div>
-                                            <!-- /img -->
-                                            <div class="blog-recent-post-text">
-                                                <div class="blog-recent-post-head">
-                                                    <a href="#">改革春风吹满地，中国人民真争气</a>
-                                                </div>
-                                                <!-- /post-head -->
-                                                <div class="blog-recent-post-meta mt5">
-                                                    <ul class="meta-list">
-                                                        <li><a class="black" href="#"><span
-                                                                class="mr5 ti-timer"></span>
-                                                            26 Apr, 2017</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /post-item -->
-
-                                        <div class="blog-recent-post-item mb20">
-                                            <div class="blog-recent-post-pic mr25 pull-left">
-                                                <img src="{% static 'img/g-2.png' %}" alt="image">
-                                            </div>
-                                            <!-- /img -->
-                                            <div class="blog-recent-post-text">
-                                                <div class="blog-recent-post-head">
-                                                    <a href="#">改革春风吹满地，中国人民真争气</a>
-                                                </div>
-                                                <!-- /post-head -->
-                                                <div class="blog-recent-post-meta mt5">
-                                                    <ul class="meta-list">
-                                                        <li><a class="black" href="#"><span
-                                                                class="mr5 ti-timer"></span>
-                                                            26 Apr, 2017</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /post-item -->
-
-                                        <div class="blog-recent-post-item">
-                                            <div class="blog-recent-post-pic mr25 pull-left">
-                                                <img src="{% static 'img/g-1.png' %}" alt="image">
-                                            </div>
-                                            <!-- /img -->
-                                            <div class="blog-recent-post-text">
-                                                <div class="blog-recent-post-head">
-                                                    <a href="#">改革春风吹满地，中国人民真争气</a>
-                                                </div>
-                                                <!-- /post-head -->
-                                                <div class="blog-recent-post-meta mt5">
-                                                    <ul class="meta-list">
-                                                        <li><a class="black" href="#"><span
-                                                                class="mr5 ti-timer"></span>
-                                                            26 Apr, 2017</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /recent-post-item -->
-                                    </div>
-                                </div>
-                                <!-- /最近热门 end -->
-
                                 <!-- /标签云 start-->
 
                                 <div class="instagram-pic">
@@ -249,17 +174,56 @@
 
                                     <div class="instagram-pic-list">
                                         <ul class="footer-gallery text-center">
-                                            <li><a href="#">Python</a></li>
-                                            <li><a href="#">Android</a></li>
-                                            <li><a href="#">Django</a></li>
-                                            <li><a href="#">Linux</a></li>
-                                            <li><a href="#">Dart</a></li>
-                                            <li><a href="#">Fulter</a></li>
-                                            <li><a href="#">Kotlin</a></li>
+                                            {% for foo in tag_list %}
+                                                <li><a href="{% url 'blog:tag' foo.id %}"> {{ foo.name }}</a></li>
+
+                                            {% endfor %}
+
+
                                         </ul>
                                     </div>
                                 </div>
                                 <!-- /标签云 end-->
+                                <!-- /最近热门 start -->
+                                <div class="blog-recent-post">
+                                    <div class="side-bar-title mb40">
+                                        <h4 class="red">最近热门</h4>
+                                    </div>
+                                    <!-- /title -->
+                                    <div class="post-item">
+                                        {% for foo in post_list %}
+                                            {% if forloop.counter0 < 3 %}
+                                                <div class="blog-recent-post-item mb20">
+                                                    <div class="blog-recent-post-pic mr25 pull-left col-sm-4">
+                                                        <img src="{{ foo.url }}" alt="image">
+                                                    </div>
+                                                    <!-- /img -->
+                                                    <div class="blog-recent-post-text">
+                                                        <div class="blog-recent-post-head">
+                                                            <a href="#">{{ foo.title }}</a>
+                                                        </div>
+                                                        <!-- /post-head -->
+                                                        <div class="blog-recent-post-meta mt5">
+                                                            <ul class="meta-list">
+                                                                <li><a class="black" href="#"><span
+                                                                        class="mr5 ti-timer"></span>
+                                                                    {{ foo.create_time }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+
+
+                                        {% endfor %}
+
+
+                                        <!-- /recent-post-item -->
+                                    </div>
+                                </div>
+                                <!-- /最近热门 end -->
+
+
                             </div>
                         </div>
                         <!-- /右侧归档、标签、热门列表 end-->

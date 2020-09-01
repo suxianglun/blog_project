@@ -6,11 +6,7 @@
 # @Version :
 
 from .base import *  # NOQA
-
-ALLOWED_HOSTS = ['39.100.154.112', 'boocax.com', 'www.boocax.com', '192.168.0.198', 'boocax.net', '127.0.0.1',
-                 'localhost ',
-                 'boocax.icoc.bz',
-                 ]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.suxianglun.com']
 DEBUG = False
 
 INSTALLED_APPS = [

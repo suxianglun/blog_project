@@ -1,4 +1,3 @@
--i http://pypi.doubanio.com/simple
 backports.csv==1.0.7
 defusedxml==0.6.0
 diff-match-patch==20181111
@@ -36,6 +35,7 @@ request==2019.4.13
 six==1.12.0
 sqlparse==0.3.0
 tablib==0.13.0
+ujson==1.35
 xadmin==0.6.1
 xlrd==1.2.0
 xlwt==1.3.0

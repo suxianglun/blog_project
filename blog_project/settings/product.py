@@ -7,7 +7,7 @@
 
 from .base import *  # NOQA
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.suxianglun.com']
-DEBUG = True
+DEBUG = False
 
 INSTALLED_APPS = [
     'django_pdb',  # 调试工具
@@ -36,6 +36,11 @@ DATABASES = {
         'POST': '3306',
     }
 }
+MIDDLEWARE += [
+    'django_pdb.middleware.PdbMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
+]
 ADMINS = MANAGERS = (
     ('suxianglun', 'suxianglun@163.com'),  # 你的邮件地址
 )

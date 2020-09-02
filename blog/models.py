@@ -151,7 +151,7 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='作者')
 
     # 教程
-    course = models.ForeignKey(Course, verbose_name='教程', blank=False)
+    course = models.ForeignKey(Course, verbose_name='教程', blank=True)
 
     # 阅读量 PositiveIntegerField 类型只允许其值大于等于0
     views = models.PositiveIntegerField(verbose_name='阅读量', default=0)

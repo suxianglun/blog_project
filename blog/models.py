@@ -77,7 +77,7 @@ class Category(models.Model):
     分类
     """
     name = models.CharField(verbose_name='名称', max_length=100)
-    nav_menu = models.ForeignKey(NavMenu, verbose_name='导航栏菜单', blank=True, default='')
+    nav_menu = models.ForeignKey(NavMenu, verbose_name='导航栏菜单')
 
     @python_2_unicode_compatible
     def __str__(self):
@@ -134,7 +134,7 @@ class Post(models.Model):
     modified_time = models.DateField(verbose_name='修改时间')
 
     # 配图
-    image = StdImageField(verbose_name='图片', blank=True,
+    image = StdImageField(verbose_name='图片', blank=True,null=True,
                           upload_to=UploadToUUID(path='images'),  # 上传路径并使用uuid重新命名 MEDIA_ROOT/images/#UUID#.#EXT#
                           variations={'thumbnail': {"width": 200, "height": 200, "crop": True}})  # 缩略图
 
@@ -146,17 +146,17 @@ class Post(models.Model):
     # 分类 根据需求 一对多关系：一篇文章对应一个分类，一个分类有多个文章
     category = models.ForeignKey(Category, verbose_name='分类')
     # 标签  根据需求 多对多关系： 一篇文章有多个标签，一个标签有多个文章
-    tag = models.ManyToManyField(Tag, verbose_name='标签', blank=True)
+    tag = models.ManyToManyField(Tag, verbose_name='标签', blank=True, null=True)
     # 作者
     author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='作者')
 
     # 教程
-    course = models.ForeignKey(Course, verbose_name='教程', blank=True)
+    course = models.ForeignKey(Course, verbose_name='教程', blank=True, null=True)
 
     # 阅读量 PositiveIntegerField 类型只允许其值大于等于0
     views = models.PositiveIntegerField(verbose_name='阅读量', default=0)
     # 图片已经上传情况下，直接使用img_url
-    img_url = models.URLField(verbose_name='外部图片url', blank=True)
+    img_url = models.URLField(verbose_name='外部图片url', blank=True, null=True)
 
     def url(self):
         """

@@ -7,7 +7,7 @@
 
 from .base import *  # NOQA
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.suxianglun.com']
-DEBUG = False
+DEBUG = True
 
 INSTALLED_APPS = [
     'django_pdb',  # 调试工具

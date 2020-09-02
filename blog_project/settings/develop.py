@@ -40,7 +40,7 @@ MIDDLEWARE += [
 
 ]
 ALLOWED_HOSTS = ['*']
-DEBUG = False
+DEBUG = True
 
 BASE_LOG_DIR = os.path.join(BASE_DIR, "log")
 LOGGING = {

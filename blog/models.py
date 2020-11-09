@@ -166,7 +166,7 @@ class Post(models.Model):
         if self.image:
             return self.image.url
         else:
-            return "url为空"
+            return ""
 
     def image_img(self):
         if self.image:
@@ -176,7 +176,7 @@ class Post(models.Model):
             image_html = '<a href="%s" target="_blank" title="图片下载地址"><img alt="" src="%s"/>' % (href, src)
             return image_html
         else:
-            return '上传图片'
+            return ''
 
     image_img.short_description = '显示图片'  # 显示在页面的内容
     image_img.allow_tags = True  # True 显示图片  False显示html代码

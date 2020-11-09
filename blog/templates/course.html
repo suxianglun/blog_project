@@ -10,7 +10,11 @@
                             {% for foo in course_list %}
                                 <div class="blog-details-section-left-side col-lg-4 col-md-3 col-sm-6">
                                     <div class="blog-details-main-pic">
-                                        <img src="{{ foo.url }}" alt="image">
+                                        {% if foo.img_url %}
+                                            <img src="{{ foo.img_url }}" alt="image">
+                                        {% else %}
+                                            <img src="{{ foo.url }}" alt="image">
+                                        {% endif %}
                                     </div>
                                     <!-- /img -->
                                     <div class="blog-head-title text-center">

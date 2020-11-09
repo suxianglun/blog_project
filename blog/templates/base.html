@@ -198,7 +198,11 @@
                                             {% if forloop.counter0 < 3 %}
                                                 <div class="blog-recent-post-item mb20">
                                                     <div class="blog-recent-post-pic mr25 pull-left col-sm-4">
-                                                        <img src="{{ foo.url }}" alt="image">
+                                                        {% if foo.img_url %}
+                                                            <img src="{{ foo.img_url }}" alt="image">
+                                                        {% else %}
+                                                            <img src="{{ foo.url }}" alt="image">
+                                                        {% endif %}
                                                     </div>
                                                     <!-- /img -->
                                                     <div class="blog-recent-post-text">

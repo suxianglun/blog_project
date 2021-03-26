@@ -29,7 +29,7 @@ public==2019.4.13
 PyMySQL==0.9.3
 python-utils==2.3.0
 pytz==2019.1
-PyYAML==5.1.1
+PyYAML==5.4
 query-string==2019.4.13
 requests
 six==1.12.0
